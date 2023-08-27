@@ -23,10 +23,10 @@ The high score is saved and updated for future gameplay.
 ```mermaid
 flowchart TD
 start(((START)))
-food[Food Module]
-snake[Snake Module]
-scoreboard[Scoreboard Module]
-main[Main Game Module]
+food(Food Module)
+snake(Snake Module)
+scoreboard(Scoreboard Module)
+main(Main Game Module)
 refresh_food[Refresh Food]
 display[Display Scoreboard]
 reset_scoreboard[Reset Scoreboard]
@@ -34,7 +34,7 @@ update_scoreboard[Update Scoreboard]
 increase_score[Increase Score]
 create_snake[Create Snake]
 reset_snake[Reset snake]
-control[Controls Snake Vovement ]
+control[Controls Snake Movement ]
 segment[Add Snake Segment]
 detect_wall{Detect Collision: Wall}
 detect_food{Detect Collision: Food}
@@ -48,4 +48,26 @@ finish(((END)))
 start --> food
 start --> snake
 start --> scoreboard
-
+food --> refresh_food
+refresh_food --> main
+scoreboard --> display
+display --> reset_scoreboard
+reset_scoreboard --> update_scoreboard
+update_scoreboard --> increase_score
+increase_score --> main
+snake --> create_snake
+create_snake --> reset_snake
+reset_snake --> control
+control --> segment
+segment --> main
+main --> detect_food
+main --> detect_wall
+main --> detect_tail
+detect_food --> increase_score2
+increase_score2 --> add_segment
+add_segment --> refresh_food2
+refresh_food2 --> finish
+detect_wall --> reset_snake2
+reset_snake2 --> reset_scoreboard2
+detect_tail --> reset_snake2
+reset_scoreboard2 --> finish
