@@ -16,8 +16,16 @@ The player gains points by eating the red food within the bounds of the screen.
 
 ## Results
 The snake gains a segment with each food the snake eats. 
+
+
 The game is over when the snake collides with the wall or with the body.
+
+
 The high score is saved and updated for future gameplay.
+
+![image](https://github.com/frantzalexander/snake_game/assets/128331579/9161a82c-7931-4dba-b87e-16df73482a1c)
+
+
 
 ## Process
 ```mermaid
