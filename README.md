@@ -28,6 +28,18 @@ The high score is saved and updated for future gameplay.
 
 
 ## Process
+The game consists of three modules:
+
+- Snake Module: controls the creation of the snake, the movement and the addition of new segments
+
+- Food Module: controls the creation of new food.
+
+- Scoreboard Module creates the scoreboard and how it is updated.
+
+- Main Game Module creates the conditions of the game and detects collion when the snake meets the food, wall and its tail. 
+
+
+
 ```mermaid
 flowchart TD
 start(((START)))
